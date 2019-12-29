@@ -1,0 +1,9 @@
+#!/bin/bash
+
+out=$1
+
+if [[ -z "${RUNFILES_DIR}"  ]]; then
+  RUNFILES_DIR=${0}.runfiles
+fi
+
+{KUBECTL_PATH} create configmap --dry-run {CONFIG_NAME} {CONFIG_FILES} --output yaml > $out
