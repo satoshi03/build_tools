@@ -4,3 +4,11 @@ k8s_secret(
     name = "secret",
     srcs = [":secret.py"],
 )
+
+k8s_secret(
+    name = "secret_multi",
+    srcs = [
+        ":secret.py",
+        ":secret_sub.py",
+    ],
+)
