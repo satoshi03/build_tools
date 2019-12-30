@@ -6,12 +6,12 @@ k8s_objects(
     name = "k8s-job",
     objects = [
         ":config",
-        ":job",
+        ":job-with-cm",
     ],
 )
 
 k8s_job(
-    name = "job",
+    name = "job-with-cm",
     template = ":job.yaml",
     substitutions = {
         "{MOUNT_PATH}": "/mnt/configs",
